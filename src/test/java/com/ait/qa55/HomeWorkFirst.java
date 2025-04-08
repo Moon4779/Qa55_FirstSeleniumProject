@@ -1,7 +1,9 @@
 package com.ait.qa55;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement; // <-- Важно!
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -41,6 +43,26 @@ public class HomeWorkFirst {
 
         System.out.println("ten elements was found !");
     }
+
+    @Test
+    public void findElementsByCssAndSimpleStrategiesTest() {
+        // --- Примеры CSS селекторов ---
+        WebElement css1 = driver.findElement(By.cssSelector("div.header-logo"));
+        WebElement css2 = driver.findElement(By.cssSelector("#small-searchterms"));
+        WebElement css3 = driver.findElement(By.cssSelector(".search-box"));
+        WebElement css4 = driver.findElement(By.cssSelector("input[type='text']"));
+        WebElement css5 = driver.findElement(By.cssSelector("a[href='/login']"));
+
+        // --- Примеры "простых" локаторов ---
+        WebElement simple1 = driver.findElement(By.id("newsletter-email"));
+        WebElement simple2 = driver.findElement(By.className("footer"));
+        WebElement simple3 = driver.findElement(By.linkText("Register"));
+        WebElement simple4 = driver.findElement(By.partialLinkText("Log"));
+        WebElement simple5 = driver.findElement(By.className("top-menu"));
+
+        System.out.println("ten elements was found !");
+    }
+
 
 
     @AfterMethod(enabled = false)
