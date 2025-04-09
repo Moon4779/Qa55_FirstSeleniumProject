@@ -62,6 +62,25 @@ public class HomeWorkFirst {
 
         System.out.println("ten elements was found !");
     }
+    @Test
+    public void findElementsByXpathTest() {
+
+
+        WebElement xpath1 = driver.findElement(By.xpath("//*[@id='dialog-notifications-success']")); // это контейнер для успешных уведомлений
+        WebElement xpath2 = driver.findElement(By.xpath("//*[@id='dialog-notifications-error']")); // отображает сообщение об ошибке
+        WebElement xpath3 = driver.findElement(By.xpath("//*[@id='bar-notification']")); // элемент div, который отображает уведомления
+        WebElement xpath4 = driver.findElement(By.xpath("//*[@id='flyout-cart']")); // div с мини-корзиной — появляется при наведении на корзину в шапке
+        WebElement xpath5 = driver.findElement(By.xpath("//*[@id='mob-menu-button']")); // кнопка мобильного меню
+
+        WebElement xpath6 = driver.findElement(By.xpath("//*[contains(@class, 'master-wrapper-content')]")); // в нём лежит всё содержимое
+        WebElement xpath7 = driver.findElement(By.xpath("//*[contains(@class, 'header')]")); // это верхняя часть страницы
+        WebElement xpath8 = driver.findElement(By.xpath("//*[contains(@class, 'header-logo')]")); // логотип сайта
+        WebElement xpath9 = driver.findElement(By.xpath("//*[contains(@class, 'header-links-wrapper')]")); // контейнер для ссылок в правом верхнем углу
+        WebElement xpath10 = driver.findElement(By.xpath("//*[contains(@class, 'header-links')]")); // сами ссылки
+
+        System.out.println("Ten elements were found using XPath!");
+    }
+
 
 
 
