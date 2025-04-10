@@ -65,22 +65,33 @@ public class HomeWorkFirst {
     @Test
     public void findElementsByXpathTest() {
 
+        WebElement element1 = driver.findElement(By.xpath("//*[@id='dialog-notifications-success']"));
+        WebElement element2 = driver.findElement(By.xpath("//*[@id='dialog-notifications-error']"));
+        WebElement element3 = driver.findElement(By.xpath("//*[@id='bar-notification']"));
+        WebElement element4 = driver.findElement(By.xpath("//*[@id='flyout-cart']"));
+        WebElement element5 = driver.findElement(By.xpath("//*[@id='mob-menu-button']"));
 
-        WebElement xpath1 = driver.findElement(By.xpath("//*[@id='dialog-notifications-success']")); // это контейнер для успешных уведомлений
-        WebElement xpath2 = driver.findElement(By.xpath("//*[@id='dialog-notifications-error']")); // отображает сообщение об ошибке
-        WebElement xpath3 = driver.findElement(By.xpath("//*[@id='bar-notification']")); // элемент div, который отображает уведомления
-        WebElement xpath4 = driver.findElement(By.xpath("//*[@id='flyout-cart']")); // div с мини-корзиной — появляется при наведении на корзину в шапке
-        WebElement xpath5 = driver.findElement(By.xpath("//*[@id='mob-menu-button']")); // кнопка мобильного меню
 
-        WebElement xpath6 = driver.findElement(By.xpath("//*[contains(@class, 'master-wrapper-content')]")); // в нём лежит всё содержимое
-        WebElement xpath7 = driver.findElement(By.xpath("//*[contains(@class, 'header')]")); // это верхняя часть страницы
-        WebElement xpath8 = driver.findElement(By.xpath("//*[contains(@class, 'header-logo')]")); // логотип сайта
-        WebElement xpath9 = driver.findElement(By.xpath("//*[contains(@class, 'header-links-wrapper')]")); // контейнер для ссылок в правом верхнем углу
-        WebElement xpath10 = driver.findElement(By.xpath("//*[contains(@class, 'header-links')]")); // сами ссылки
+        WebElement element6 = driver.findElement(By.xpath("//*[contains(@class,'master-wrapper-content')]"));
+        WebElement element7 = driver.findElement(By.xpath("//*[contains(@class,'header')]"));
+        WebElement element8 = driver.findElement(By.xpath("//*[contains(@class,'header-logo')]"));
+        WebElement element9 = driver.findElement(By.xpath("//*[contains(@class,'header-links-wrapper')]"));
+        WebElement element10 = driver.findElement(By.xpath("//*[contains(@class,'header-links')]"));
 
-        System.out.println("Ten elements were found using XPath!");
+        System.out.println("Ten elements were found using XPath strategy!");
     }
 
+    @Test
+    public void find15ElementsWithXpath() {
+        WebElement element2 = driver.findElement(By.xpath("//a[text()='Register']")); // По тексту (точное совпадение)
+        WebElement element8 = driver.findElement(By.xpath("//input[@id='small-searchterms']/parent::*")); // вернуться к родителю
+        WebElement element9 = driver.findElement(By.xpath("//input[@id='small-searchterms']/ancestor::form"));// любой предок
+        WebElement element10 = driver.findElement(By.xpath("//input[@id='small-searchterms']/preceding-sibling::label")); // предыдущий соседний элемент
+        WebElement element11 = driver.findElement(By.xpath("//label[@for='small-searchterms']/following-sibling::input")); //следующий соседний элемент
+
+
+        System.out.println("5 element was found ");
+    }
 
 
 
