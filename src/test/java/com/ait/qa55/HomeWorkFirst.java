@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -92,6 +93,26 @@ public class HomeWorkFirst {
 
         System.out.println("5 element was found ");
     }
+
+    @Test
+    public void createNewAccountPositiveTest(){
+        driver.findElement(By.linkText("Register")).click();
+        WebElement registerHeader = driver.findElement(By.xpath("//h1[text()='Register']"));
+        Assert.assertTrue(registerHeader.isDisplayed());
+        driver.findElement(By.id("gender-female")).click();
+        driver.findElement(By.id("FirstName")).sendKeys("Anna");
+        driver.findElement(By.id("LastName")).sendKeys("Smith");
+        driver.findElement(By.id("Email")).sendKeys("anna.test2025@example.com");
+        driver.findElement(By.id("Password")).sendKeys("Test1234");
+        driver.findElement(By.id("ConfirmPassword")).sendKeys("Test1234");
+        driver.findElement(By.id("register-button")).click();
+        // Проверка, что регистрация прошла успешно
+        WebElement successMessage = driver.findElement(By.className("result"));
+        Assert.assertTrue(successMessage.getText().contains("Your registration completed"));
+
+        System.out.println("Registration completed successfully!");
+    }
+
 
 
 
