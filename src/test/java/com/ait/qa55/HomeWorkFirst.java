@@ -1,8 +1,8 @@
 package com.ait.qa55;
 
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WebElement;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,14 +11,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class HomeWorkFirst {
-    WebDriver driver;
+public class HomeWorkFirst extends BaseTest {
 
-    @BeforeMethod
-    public void setUp() {
-        driver = new ChromeDriver();
-        driver.navigate().to("https://demowebshop.tricentis.com/");
-    }
 
     @Test
     public void openWebsiteTest() {
@@ -63,6 +57,7 @@ public class HomeWorkFirst {
 
         System.out.println("ten elements was found !");
     }
+
     @Test
     public void findElementsByXpathTest() {
 
@@ -95,7 +90,7 @@ public class HomeWorkFirst {
     }
 
     @Test
-    public void createNewAccountPositiveTest(){
+    public void createNewAccountPositiveTest() {
         driver.findElement(By.linkText("Register")).click();
         WebElement registerHeader = driver.findElement(By.xpath("//h1[text()='Register']"));
         Assert.assertTrue(registerHeader.isDisplayed());
@@ -112,12 +107,9 @@ public class HomeWorkFirst {
 
         System.out.println("Registration completed successfully!");
     }
-
-
-
-
-    @AfterMethod(enabled = false)
-    public void tearDown() {
-        driver.quit();
-    }
 }
+
+
+
+
+

@@ -9,14 +9,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LoginTests {
-    WebDriver driver;
+public class LoginTests extends BaseTest {
 
-    @BeforeMethod
-    public  void setUp(){
-        driver = new ChromeDriver();
-        driver.navigate().to("https://demowebshop.tricentis.com/");
-    }
+
 
     @Test
     public void testPositiveLogin(){
