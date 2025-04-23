@@ -23,11 +23,11 @@ public class TabelTestsHW {
     @Test
     public void findElementTableWithXpathTest() {
 
-        List<WebElement> rows = driver.findElements(By.xpath("//table//tr"));
-        System.out.println("Всего строк: " + rows.size());
-        for (WebElement row : rows) {
-            System.out.println(row.getText()); // Получаем все строки таблицы
-        }
+        printAllTableRows();
+        printSpecificTableCellls();
+    }
+
+    public void printSpecificTableCellls() {
         WebElement row3 = driver.findElement(By.xpath("//table//tr[4]"));
         System.out.println("3 : " + row3.getText()); // Получаем конкретную строку (например, 3)
         WebElement item1 = driver.findElement(By.xpath("//table//tr[7]/td[1]"));
@@ -36,9 +36,13 @@ public class TabelTestsHW {
         System.out.println("last box it the 8 row : " + canada.getText()); // Получаем последнюю колонку в 8-й строке
     }
 
-
-
-
+    public void printAllTableRows() {
+        List<WebElement> rows = driver.findElements(By.xpath("//table//tr"));
+        System.out.println("Всего строк: " + rows.size());
+        for (WebElement row : rows) {
+            System.out.println(row.getText()); // Получаем все строки таблицы
+        }
+    }
 
 
     @AfterMethod

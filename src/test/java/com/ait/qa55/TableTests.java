@@ -35,18 +35,19 @@ public class TableTests extends BaseTest {
         System.out.println("All rows" + rows.size());
         for(WebElement el:rows){
             System.out.println(el.getText());
-            driver.findElements(By.cssSelector("tr:nth-child(4)"));
-            WebElement row4 = driver.findElement(By.cssSelector("tr:nth-child(4)"));
-            System.out.println(row4.getText());
-            WebElement item1 = driver.findElement(By.cssSelector("tr:nth-child(7) td:nth-child(1)"));
-            System.out.println(item1.getText());
-            WebElement canada = driver.findElement(By.cssSelector("tr:nth-child(8) td:last-child"));
-            System.out.println(canada.getText());
-
-
-
         }
+        printSpecificRows();
 
+    }
+
+    public void printSpecificRows() {
+
+        WebElement row4 = driver.findElement(By.cssSelector("tr:nth-child(4)"));
+        System.out.println(row4.getText());
+        WebElement item1 = driver.findElement(By.cssSelector("tr:nth-child(7) td:nth-child(1)"));
+        System.out.println(item1.getText());
+        WebElement canada = driver.findElement(By.cssSelector("tr:nth-child(8) td:last-child"));
+        System.out.println(canada.getText());
     }
 
 }
