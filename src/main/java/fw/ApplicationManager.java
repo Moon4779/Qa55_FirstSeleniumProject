@@ -1,4 +1,4 @@
-package com.ait.qa55;
+package fw;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,6 +9,8 @@ import java.time.Duration;
 public class ApplicationManager {
     private WebDriver driver;
     private final String browser;
+    private ContactHelper contactHelper;
+    private UserHelper userHelper;
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -23,7 +25,10 @@ public class ApplicationManager {
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://demowebshop.tricentis.com/"); // сюда нужный URL
+        driver.get("https://demowebshop.tricentis.com/");
+        contactHelper = new ContactHelper(driver);
+        userHelper = new UserHelper(driver);
+
     }
 
     public void stop() {
@@ -34,5 +39,17 @@ public class ApplicationManager {
 
     public WebDriver getDriver() {
         return driver;
+    }
+
+    public ContactHelper getContact() {
+        return contactHelper;
+    }
+
+    public UserHelper getUser() {
+        return userHelper;
+    }
+
+    public Object getHome() {
+        return null;
     }
 }

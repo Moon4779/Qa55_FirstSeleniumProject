@@ -1,6 +1,8 @@
 package com.ait.qa55;
 
 
+import com.FirstSeleniumProgect.ContactData;
+import com.FirstSeleniumProgect.UserData;
 import org.openqa.selenium.WebElement;
 
 
@@ -129,15 +131,15 @@ public class HomeWorkFirst extends BaseTest {
 
     public void uniqeEmail() {
         String uniqueEmail = "anna.test" + System.currentTimeMillis() + "@example.com";
-        driver.findElement(By.id("Email")).sendKeys(uniqueEmail);
-        driver.findElement(By.id("Password")).sendKeys("Test1234");
-        driver.findElement(By.id("ConfirmPassword")).sendKeys("Test1234");
+        driver.findElement(By.id("Email")).sendKeys(ContactData.EMAIL);
+        driver.findElement(By.id("Password")).sendKeys(UserData.PASSWORD);
+        driver.findElement(By.id("ConfirmPassword")).sendKeys(UserData.PASSWORD);
     }
 
     public void fillingOutRegistrationForm() {
         driver.findElement(By.id("gender-female")).click();
-        driver.findElement(By.id("FirstName")).sendKeys("Anna");
-        driver.findElement(By.id("LastName")).sendKeys("Smith");
+        driver.findElement(By.id("FirstName")).sendKeys(ContactData.Name);
+        driver.findElement(By.id("LastName")).sendKeys(ContactData.Last_Name);
     }
 
     public void pageOfRegisrtation() {

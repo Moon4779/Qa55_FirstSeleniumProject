@@ -1,5 +1,7 @@
 package com.ait.qa55;
 
+import com.FirstSeleniumProgect.ContactData;
+import com.FirstSeleniumProgect.UserData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,11 +25,11 @@ public class CreateAccountTests {
         int i = (int)((System.currentTimeMillis()/1000)%3600);
         driver.findElement(By.linkText("Register")).click();
         driver.findElement(By.id("gender-female")).click();
-        driver.findElement(By.id("FirstName")).sendKeys("Anna");
-        driver.findElement(By.id("LastName")).sendKeys("Smith");
+        driver.findElement(By.id("FirstName")).sendKeys(ContactData.Name);
+        driver.findElement(By.id("LastName")).sendKeys(ContactData.Last_Name);
         driver.findElement(By.id("Email")).sendKeys("test" + i + "@test.com");
-        driver.findElement(By.id("Password")).sendKeys("Test1234");
-        driver.findElement(By.id("ConfirmPassword")).sendKeys("Test1234");
+        driver.findElement(By.id("Password")).sendKeys(UserData.PASSWORD);
+        driver.findElement(By.id("ConfirmPassword")).sendKeys(UserData.PASSWORD);
         driver.findElement(By.id("register-button")).click();
 
         WebElement success = driver.findElement(By.className("result"));
@@ -39,10 +41,10 @@ public class CreateAccountTests {
         int i = (int)((System.currentTimeMillis()/1000)%3600);
         driver.findElement(By.linkText("Register")).click();
         driver.findElement(By.id("gender-female")).click();
-        driver.findElement(By.id("FirstName")).sendKeys("Anna");
-        driver.findElement(By.id("LastName")).sendKeys("Smith");
-        driver.findElement(By.id("Email")).sendKeys("test" + i + "@test.com");
-        driver.findElement(By.id("Password")).sendKeys("Test1234");
+        driver.findElement(By.id("FirstName")).sendKeys(ContactData.Name);
+        driver.findElement(By.id("LastName")).sendKeys(ContactData.Last_Name);
+        driver.findElement(By.id("Email")).sendKeys(ContactData.EMAIL);
+        driver.findElement(By.id("Password")).sendKeys(UserData.PASSWORD);
         driver.findElement(By.id("ConfirmPassword")).sendKeys("WrongPassword");
         driver.findElement(By.id("register-button")).click();
 

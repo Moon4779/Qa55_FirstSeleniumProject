@@ -1,4 +1,4 @@
-package com.ait.qa55;
+package models;
 
 public class User {
     private String email;
@@ -8,19 +8,30 @@ public class User {
         this.email = email;
         this.password = password;
 }
- public String getEmail(){
-    return email;
+
+    public User() {
+
+    }
+
+    public String getEmail(){
+
+        return email;
     }
 
     public String getPassword() {
+
         return password;
     }
 
-    public void setEmail(String email) {
+    public User setEmail(String email) {
+
         this.email = email;
+        return null;
     }
 
-    public void setPassword(String password) {
+    public User setPassword(String password) {
+
         this.password = password;
+        return null;
     }
 }
